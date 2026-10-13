@@ -1,0 +1,14 @@
+# build output
+target/
+*.class
+
+# runtime data (created on first run; may contain customer names and emails)
+data/orders.txt
+data/orders.txt.tmp
+data/menu-state.txt
+
+# IDE / OS
+.idea/
+.vscode/
+nbproject/private/
+.DS_Store

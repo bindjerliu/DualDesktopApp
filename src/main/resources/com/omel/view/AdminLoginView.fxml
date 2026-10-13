@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.omel.controller.AdminLoginController" styleClass="root-bg">
+    <center>
+        <VBox alignment="CENTER" spacing="18" maxWidth="430" styleClass="glass-panel">
+            <padding><Insets top="42" right="42" bottom="42" left="42"/></padding>
+            <Label text="Admin Access" styleClass="section-title"/>
+            <Label text="Staff dashboard" styleClass="muted-text"/>
+            <TextField fx:id="usernameField" promptText="Username" styleClass="premium-input"/>
+            <PasswordField fx:id="passwordField" promptText="Password" styleClass="premium-input"/>
+            <Label fx:id="errorLabel" styleClass="error-text"/>
+            <Button text="Login" onAction="#login" maxWidth="Infinity" styleClass="primary-button-large"/>
+            <Button text="Back" onAction="#back" maxWidth="Infinity" styleClass="ghost-button"/>
+        </VBox>
+    </center>
+</BorderPane>

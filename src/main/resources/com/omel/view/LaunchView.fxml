@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.omel.controller.LaunchController" styleClass="root-bg">
+    <VBox alignment="CENTER" spacing="28" maxWidth="780" styleClass="glass-panel">
+        <padding><Insets top="52" right="58" bottom="52" left="58"/></padding>
+        <Label text="OMEL" styleClass="brand-title"/>
+        <Label text="Premium Campus Ordering Ecosystem" styleClass="hero-subtitle"/>
+        <Label text="Order ahead, skip the cafeteria queue, and manage high-volume campus café traffic with a premium JavaFX desktop experience." wrapText="true" textAlignment="CENTER" styleClass="body-large"/>
+        <HBox alignment="CENTER" spacing="18">
+            <Button text="Open User App" onAction="#openUserApp" styleClass="primary-button-large"/>
+            <Button text="Open Admin Dashboard" onAction="#openAdminLogin" styleClass="secondary-button-large"/>
+        </HBox>
+        <Label text="Built with JavaFX, FXML, MVC architecture, CSS styling, and a .txt order database." styleClass="muted-text"/>
+    </VBox>
+</StackPane>

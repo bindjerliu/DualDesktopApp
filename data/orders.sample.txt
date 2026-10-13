@@ -1,0 +1,2 @@
+OMEL-1001|2026-04-28 09:15|Sample Student|sample.student@rit.edu|12:30|Morning Brew Coffee x1, Chicken Caesar Wrap x1|5.70|PENDING|No onions
+OMEL-1002|2026-04-28 09:22|Another Student|another.student@rit.edu|13:00|Iced Caramel Latte x2, Chocolate Croissant x1|7.40|PREPARING|Extra caramel

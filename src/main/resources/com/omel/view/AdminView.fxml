@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.omel.controller.AdminController" styleClass="app-bg">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="18" styleClass="topbar">
+            <padding><Insets top="18" right="28" bottom="18" left="28"/></padding>
+            <VBox>
+                <Label text="OMEL ADMIN" styleClass="nav-brand"/>
+                <Label text="Order monitor, revenue snapshot, and inventory controls" styleClass="muted-text"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Refresh" onAction="#refresh" styleClass="secondary-button"/>
+            <Button text="Logout" onAction="#logout" styleClass="ghost-button"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="18">
+            <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+            <HBox spacing="16">
+                <VBox styleClass="metric-card" HBox.hgrow="ALWAYS"><Label text="Revenue (completed)" styleClass="eyebrow"/><Label fx:id="revenueLabel" text="€0.00" styleClass="metric-number"/></VBox>
+                <VBox styleClass="metric-card" HBox.hgrow="ALWAYS"><Label text="Active Orders" styleClass="eyebrow"/><Label fx:id="activeOrdersLabel" text="0" styleClass="metric-number"/></VBox>
+                <VBox styleClass="metric-card" HBox.hgrow="ALWAYS"><Label text="Completed" styleClass="eyebrow"/><Label fx:id="completedOrdersLabel" text="0" styleClass="metric-number"/></VBox>
+                <VBox styleClass="metric-card" HBox.hgrow="ALWAYS"><Label text="Available Items" styleClass="eyebrow"/><Label fx:id="inventoryLabel" text="0/0" styleClass="metric-number"/></VBox>
+            </HBox>
+            <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS" styleClass="premium-table">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="Order ID" prefWidth="100"/>
+                    <TableColumn fx:id="timeColumn" text="Time" prefWidth="140"/>
+                    <TableColumn fx:id="customerColumn" text="Customer" prefWidth="140"/>
+                    <TableColumn fx:id="pickupColumn" text="Pickup" prefWidth="110"/>
+                    <TableColumn fx:id="itemsColumn" text="Items" prefWidth="330"/>
+                    <TableColumn fx:id="totalColumn" text="Total" prefWidth="80"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="115"/>
+                </columns>
+            </TableView>
+            <HBox spacing="12">
+                <Button text="Preparing" onAction="#markPreparing" styleClass="secondary-button"/>
+                <Button text="Ready" onAction="#markReady" styleClass="secondary-button"/>
+                <Button text="Completed" onAction="#markCompleted" styleClass="primary-button"/>
+                <Button text="Cancel" onAction="#cancelOrder" styleClass="danger-button"/>
+            </HBox>
+        </VBox>
+    </center>
+    <right>
+        <VBox spacing="16" prefWidth="330" styleClass="cart-panel">
+            <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+            <Label text="Selected Order" styleClass="section-title"/>
+            <TextArea fx:id="detailsArea" editable="false" wrapText="true" prefHeight="250" styleClass="premium-input"/>
+            <Label text="Inventory" styleClass="section-title"/>
+            <ListView fx:id="inventoryList" prefHeight="260" styleClass="premium-list"/>
+            <Button text="Toggle Availability" onAction="#toggleAvailability" maxWidth="Infinity" styleClass="secondary-button-large"/>
+        </VBox>
+    </right>
+</BorderPane>
